@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "ReactJS",
+  "compilerOptions": {
+    /* ReactJS Options */
+    "baseUrl": "./",
+    "paths": {
+      "*": ["./src/*"]
+    },
+
+    /* Basic Options */
+    "target": "ES2020",
+    "incremental": true,
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "allowJs": true,
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "composite": false,
+    "declaration": true,
+    "noImplicitAny": false,
+    "declarationMap": true,
+    "inlineSources": false,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "downlevelIteration": true,
+    "preserveWatchOutput": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mjs", "src", "tests/unit/App.test.ts"],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
