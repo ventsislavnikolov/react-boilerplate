@@ -10,6 +10,10 @@ export const theme = {
       primary: '#0275d8',
       success: '#38a169',
     },
+    fontFamily: {
+      title: ['Roboto'],
+      text: ['Roboto'],
+    },
   },
 };
-export const plugins = [];
+export const plugins = [require('prettier-plugin-tailwindcss')];

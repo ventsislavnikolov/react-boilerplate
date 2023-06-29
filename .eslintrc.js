@@ -41,6 +41,7 @@ module.exports = {
     },
   },
   rules: {
+    'global-require': 'off',
     'react/prop-types': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
