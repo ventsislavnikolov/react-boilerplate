@@ -49,6 +49,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.mjs",
+    "**/*.json",
     "src",
     "tests/unit/App.test.ts",
     "vite.config.js"

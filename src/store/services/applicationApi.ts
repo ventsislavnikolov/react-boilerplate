@@ -11,7 +11,7 @@ const applicationApi = createApi({
   baseQuery,
   endpoints: (builder) => ({
     getAbility: builder.query({
-      query: (params) => `abilityy/?limit=${params.limit}&offset=${params.offset}`,
+      query: (params) => `ability/?limit=${params.limit}&offset=${params.offset}`,
     }),
   }),
 });
