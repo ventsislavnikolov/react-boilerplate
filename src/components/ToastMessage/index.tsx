@@ -2,7 +2,9 @@ import * as Toast from '@radix-ui/react-toast';
 import { styled } from 'react-cva';
 
 import closeIcon from 'assets/icons/closeIcon.svg';
-import forbidIcon from 'assets/icons/forbidIcon.svg';
+
+import ToastMessageViewport from './ToastMessageViewport';
+import ToastMessageDescription from './ToastMessageDescription';
 
 const Root = styled(Toast.Root)(
   [
@@ -35,43 +37,6 @@ const Root = styled(Toast.Root)(
   },
 );
 
-const Description = styled(Toast.Description)(['flex', 'items-center', 'justify-start'], {
-  variants: {
-    intent: {
-      primary: ['text-center', 'text-white', '[grid-area:_title]'],
-    },
-    size: {
-      normal: ['text-[15px'],
-    },
-  },
-  defaultVariants: {
-    size: 'normal',
-  },
-});
-
-const Viewport = styled(Toast.Viewport)(
-  ['fixed', 'bottom-0', 'right-0', 'z-[2147483647]', 'm-0', 'flex', 'list-none', 'flex-col'],
-  {
-    variants: {
-      intent: {
-        primary: [
-          'gap-[10px]',
-          'p-[var(--viewport-padding)]',
-          'outline-none',
-          '[--viewport-padding:_25px]',
-        ],
-      },
-      size: {
-        normal: ['w-[402px]', 'max-w-[100vw]'],
-      },
-    },
-    defaultVariants: {
-      intent: 'primary',
-      size: 'normal',
-    },
-  },
-);
-
 export interface RenderProps {
   isOpen: boolean;
   message: string;
@@ -83,15 +48,12 @@ export default function Render({ isOpen, message, severity, onOpenChange }: Rend
   return (
     <>
       <Root open={isOpen} duration={3000} intent={severity} onOpenChange={() => onOpenChange()}>
-        <Description>
-          <img src={forbidIcon} alt='close icon' className='pr-2' />
-          {message}
-        </Description>
+        <ToastMessageDescription message={message} />
         <Toast.Close>
           <img src={closeIcon} alt='close icon' />
         </Toast.Close>
       </Root>
-      <Viewport />
+      <ToastMessageViewport />
     </>
   );
 }

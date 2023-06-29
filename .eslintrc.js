@@ -41,6 +41,7 @@ module.exports = {
     },
   },
   rules: {
+    'react/prop-types': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'react/react-in-jsx-scope': 'off',

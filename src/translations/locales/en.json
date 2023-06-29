@@ -1,0 +1,8 @@
+{
+    "home": {
+        "hello-boilerplate": "Hello Boilerplate!"
+    },
+    "errors": {
+        "defaultError": "Something went wrong."
+    }
+}
