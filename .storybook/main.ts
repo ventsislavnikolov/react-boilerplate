@@ -16,6 +16,7 @@ const config: StorybookConfig = {
     '@storybook/addon-storysource',
     '@storybook/addon-interactions',
     '@storybook/addon-coverage',
+    'storybook-dark-mode',
     {
       name: '@storybook/addon-styling',
       options: {},
