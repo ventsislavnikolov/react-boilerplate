@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://pokeapi.co/api/v2/',
+  baseUrl: import.meta.env.VITE_API_URL,
   credentials: 'same-origin',
   mode: 'cors',
 });
