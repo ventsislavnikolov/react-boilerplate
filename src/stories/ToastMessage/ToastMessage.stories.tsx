@@ -1,4 +1,3 @@
-/* eslint-disable */
 import * as Toast from '@radix-ui/react-toast';
 
 import { ToastMessage } from 'components';
