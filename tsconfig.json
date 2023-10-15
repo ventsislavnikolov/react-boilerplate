@@ -52,7 +52,8 @@
     "**/*.json",
     "src",
     "tests/unit/App.test.ts",
-    "vite.config.js"
+    "./vite.config.js",
+    "./vitest.setup.js"
   ],
   "exclude": ["node_modules"]
 }
