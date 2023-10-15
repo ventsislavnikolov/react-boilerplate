@@ -1,4 +1,4 @@
-name: Test, Build and Release
+name: Lint, Format, Tests, e2e Testing, Build, Release
 
 on:
  push:
@@ -38,6 +38,9 @@ jobs:
 
       - name: Install wait-on
         run: npm install -g wait-on
+
+      - name: Install playwright
+        run: pnpm exec playwright install
 
       - name: Smoke & Acceptance tests
         run: |
