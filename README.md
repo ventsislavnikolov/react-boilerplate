@@ -11,7 +11,7 @@ Boilerplate for ReactJS projects with all the necessary tools and configurations
 3. Graphviz
 4. Playwright
 5. Visual Studio Code or any other IDE
-6. ESLint for Visual Studio Code (or any other IDE with ESLint support)
+6. OXLint/OXC for Visual Studio Code (or any other IDE with OXLint support)
 7. Prettier for Visual Studio Code (or any other IDE with Prettier support)
 
 ## Installation
@@ -41,7 +41,7 @@ Boilerplate for ReactJS projects with all the necessary tools and configurations
 12. React Testing Library
 13. Playwright
 14. Storybook
-15. ESLint
+15. OXLint
 16. Prettier
 17. Husky
 18. Lint Staged

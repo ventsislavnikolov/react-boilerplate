@@ -5,7 +5,8 @@
     /* ReactJS Options */
     "baseUrl": "./",
     "paths": {
-      "*": ["./src/*"]
+      "*": ["./src/*"],
+      "@/*": ["./src/*"],
     },
 
     /* Basic Options */
@@ -16,20 +17,18 @@
     "allowJs": true,
     "module": "ESNext",
     "skipLibCheck": true,
-    "composite": true,
-    "declaration": true,
+    "declaration": false,
     "noImplicitAny": false,
-    "declarationMap": true,
     "inlineSources": false,
     "noImplicitThis": true,
     "strictNullChecks": true,
     "downlevelIteration": true,
     "preserveWatchOutput": true,
+    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -48,12 +47,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mjs",
-    "**/*.json",
-    "src",
-    "tests/unit/App.test.ts",
-    "./vite.config.js",
-    "./vitest.setup.js"
   ],
   "exclude": ["node_modules"]
 }

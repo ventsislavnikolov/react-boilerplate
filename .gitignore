@@ -26,3 +26,4 @@ storybook-static
 graph.svg
 tsconfig.tsbuildinfo
 .env
+.sentryclirc

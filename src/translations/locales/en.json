@@ -1,6 +1,8 @@
 {
     "home": {
+        "german": "Deutsch",
         "english": "English",
+        "threwError": "Threw error",
         "hello-boilerplate": "Hello Boilerplate!"
     },
     "errors": {

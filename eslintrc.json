@@ -1,0 +1,12 @@
+{
+    "rules": {
+        "no-undef": "off",
+        "import/default": "off",
+        "unicorn/filename-case": "off",
+        "unicorn/prefer-spread": "off",
+        "react/react-in-jsx-scope": "off",
+        "unicorn/no-zero-fractions": "off",
+        "unicorn/prefer-query-selector": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
+}

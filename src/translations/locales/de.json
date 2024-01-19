@@ -1,0 +1,11 @@
+{
+    "home": {
+        "german": "Deutsch",
+        "english": "English",
+        "threwError": "hat einen Fehler geworfen",
+        "hello-boilerplate": "Hallo Boilerplate!"
+    },
+    "errors": {
+        "defaultError": "Etwas ist schief gelaufen."
+    }
+}

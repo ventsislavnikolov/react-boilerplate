@@ -11,5 +11,6 @@ export default {
   trailingComma: 'all',
   jsxSingleQuote: true,
   arrowParens: 'always',
-  tailwindConfig: './tailwind.config.js',
+  plugins: ['prettier-plugin-tailwindcss'],
+  tailwindConfig: './tailwind.config.ts',
 };

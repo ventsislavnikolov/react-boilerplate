@@ -1,17 +1,19 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { env } from "@/env";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_API_URL,
-  credentials: 'same-origin',
-  mode: 'cors',
+  baseUrl: env.VITE_API_URL,
+  credentials: "same-origin",
+  mode: "cors",
 });
 
 const applicationApi = createApi({
-  reducerPath: 'applicationApi',
+  reducerPath: "applicationApi",
   baseQuery,
   endpoints: (builder) => ({
     getAbility: builder.query({
-      query: (params) => `ability/?limit=${params.limit}&offset=${params.offset}`,
+      query: (params) =>
+        `ability/?limit=${params.limit}&offset=${params.offset}`,
     }),
   }),
 });

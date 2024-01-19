@@ -1,32 +1,34 @@
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import react from '@vitejs/plugin-react-swc';
-import eslint from 'vite-plugin-eslint';
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      onLog(level, log, handler) {
+        if (log.cause && log.cause.message === `Can't resolve original location of error.`) {
+          return
+        }
+        handler(level, log)
+      },
+      output: {
+        manualChunks: {
+          vendor: [
+            'zod',
+            'react-dom',
+            '@radix-ui/colors',
+            '@radix-ui/react-toast',
+          ],
+        },
+      },
+    },
+  },
   plugins: [
     react(),
-    {
-      ...eslint({
-        failOnWarning: true,
-        failOnError: true,
-      }),
-      apply: 'build',
-    },
-    {
-      ...eslint({
-        failOnWarning: false,
-        failOnError: true,
-      }),
-      apply: 'serve',
-      enforce: 'post',
-    },
   ],
-  css: {
-    postcss: {},
-  },
   resolve: {
     alias: {
+      '@': '/src',
       store: '/src/store',
       assets: '/src/assets',
       router: '/src/router',
@@ -38,7 +40,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['./vitest.setup.js'],
+    setupFiles: ['./vitest.setup.ts'],
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'json', 'html'],

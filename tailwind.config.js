@@ -1,19 +1,11 @@
-import { white } from '@radix-ui/colors';
-
-export const darkMode = 'class';
-export const content = ['./index.html', './src/**/*.{ts,tsx,js,jsx,mdx}'];
-export const theme = {
-  extend: {
-    colors: {
-      ...white,
-      error: '#e53e3e',
-      primary: '#0275d8',
-      success: '#38a169',
-    },
-    fontFamily: {
-      title: ['Roboto'],
-      text: ['Roboto'],
-    },
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
   },
-};
-export const plugins = [require('prettier-plugin-tailwindcss')];
+  plugins: [],
+}
