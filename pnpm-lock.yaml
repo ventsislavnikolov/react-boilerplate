@@ -170,8 +170,8 @@ devDependencies:
     specifier: 1.2.1
     version: 1.2.1(vitest@1.2.1)
   autoprefixer:
-    specifier: 10.4.16
-    version: 10.4.16(postcss@8.4.33)
+    specifier: 10.4.17
+    version: 10.4.17(postcss@8.4.33)
   chromatic:
     specifier: 10.3.1
     version: 10.3.1
@@ -6801,8 +6801,8 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: true
 
-  /autoprefixer@10.4.16(postcss@8.4.33):
-    resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
+  /autoprefixer@10.4.17(postcss@8.4.33):
+    resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
