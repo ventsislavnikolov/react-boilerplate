@@ -8,16 +8,16 @@ interface ViteConfig extends UserConfig {
 }
 
 const config: StorybookConfig = {
-	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-		"@storybook/addon-a11y",
-		"@storybook/addon-coverage",
-		"@storybook/addon-designs",
-		"@storybook/addon-essentials",
-		"@storybook/addon-interactions",
-		"@storybook/addon-links",
-		"@storybook/addon-storysource",
-		"@storybook/addon-styling",
+    '@storybook/addon-a11y',
+    '@storybook/addon-coverage',
+    '@storybook/addon-designs',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-links',
+    '@storybook/addon-storysource',
+    '@storybook/addon-styling',
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -40,7 +40,7 @@ const config: StorybookConfig = {
     },
   },
   async viteFinal(config: UserConfig) {
-    const viteConfig = (await import('../vite.config.js')).default as ViteConfig;
+    const viteConfig = (await import('./vite.config.js')).default as ViteConfig;
 
     // Merge custom configuration into the default config
     const mergedConfig = mergeConfig(config, {
