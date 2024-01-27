@@ -1,9 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
-import Index from "router/index";
+import { createBrowserRouter } from 'react-router-dom';
+
+import Index from 'router/index';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Index />,
   },
 ]);

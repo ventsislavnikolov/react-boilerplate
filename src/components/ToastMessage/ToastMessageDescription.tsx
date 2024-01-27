@@ -1,28 +1,30 @@
 import * as Toast from '@radix-ui/react-toast';
-import { styled } from 'react-cva';
+import { cva } from 'class-variance-authority';
 
 import forbidIcon from 'assets/icons/forbidIcon.svg';
 
-const Description = styled(Toast.Description)(['flex', 'items-center', 'justify-start'], {
+const toastMessage = cva(['flex', 'items-center', 'justify-start'], {
   variants: {
     intent: {
-      primary: ['text-center', 'text-white', '[grid-area:_title]'],
+      primary: ['text-center', 'text-black', '[grid-area:_title]'],
+      error: ['text-center', 'text-white', '[grid-area:_title]'],
     },
     size: {
-      normal: ['text-[15px]'],
+      small: ['text-[15px]'],
     },
   },
+  compoundVariants: [{ intent: 'primary', size: 'small', class: 'capitalize' }],
   defaultVariants: {
     intent: 'primary',
-    size: 'normal',
+    size: 'small',
   },
 });
 
-export default function Render({ message }) {
+export default function Render({ intent, message, size, className }: any) {
   return (
-    <Description>
+    <Toast.Description className={toastMessage({ intent, size, className })}>
       <img src={forbidIcon} alt='close icon' className='pr-2' />
       {message}
-    </Description>
+    </Toast.Description>
   );
 }

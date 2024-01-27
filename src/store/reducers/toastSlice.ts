@@ -1,13 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  message: "",
-  severity: "",
+  message: '',
+  severity: '',
   isOpen: false,
 };
 
 export const toastSlice: any = createSlice({
-  name: "toast",
+  name: 'toast',
   initialState,
   reducers: {
     setToast: (state, action) => ({ ...state, ...action.payload }),

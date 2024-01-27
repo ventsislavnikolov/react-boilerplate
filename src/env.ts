@@ -1,9 +1,9 @@
-import { createEnv } from "@t3-oss/env-core";
-import { z } from "zod";
+import { createEnv } from '@t3-oss/env-core';
+import { z } from 'zod';
 
 export const env = createEnv({
   server: {},
-  clientPrefix: "VITE_",
+  clientPrefix: 'VITE_',
   client: {
     VITE_SENTRY_DSN: z.string(),
     VITE_API_URL: z.string(),

@@ -2,6 +2,13 @@ import * as Toast from '@radix-ui/react-toast';
 
 import { ToastMessage } from 'components';
 
+type StoryType = {
+  (): JSX.Element;
+  args?: Record<string, unknown>;
+  argTypes?: Record<string, unknown>;
+  decorators?: unknown[];
+};
+
 const meta = {
   component: ToastMessage,
 };
@@ -10,7 +17,7 @@ export default meta;
 
 export const Primary = {
   decorators: [
-    (Story) => (
+    (Story: StoryType) => (
       <Toast.Provider swipeDirection='right'>
         <Story />
       </Toast.Provider>

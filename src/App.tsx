@@ -1,33 +1,39 @@
-import { useSelector, useDispatch } from "react-redux";
-import { RouterProvider } from "react-router-dom";
-import * as Toast from "@radix-ui/react-toast";
+import { useSelector, useDispatch } from 'react-redux';
+import { RouterProvider } from 'react-router-dom';
 
-// UI components
-import { ToastMessage } from "components";
+import { ToastMessage } from 'components';
+import { setToastInitialState } from 'store/reducers/toastSlice';
 
-// import store action for set toast initial state
-import { setToastInitialState } from "store/reducers/toastSlice";
+import router from 'router';
 
-// import router
-import router from "./router";
+import 'translations';
 
-// import i18n
-import "translations";
+type ToastType = {
+  toast: {
+    size: 'small';
+    isOpen: boolean;
+    message: string;
+    viewPort: 'primary';
+    severity: 'success' | 'error' | 'primary';
+  };
+};
 
 function App() {
   const dispatch = useDispatch();
-  const toast = useSelector((state: any) => state.toast);
+  const toast = useSelector((state: ToastType) => state.toast);
 
   return (
-    <Toast.Provider swipeDirection="right">
+    <>
       <RouterProvider router={router} />
       <ToastMessage
+        size={toast.size}
         isOpen={toast.isOpen}
         message={toast.message}
-        severity={toast.severity}
+        intent={toast.severity}
+        viewPort={toast.viewPort}
         onOpenChange={() => dispatch(setToastInitialState())}
       />
-    </Toast.Provider>
+    </>
   );
 }
 

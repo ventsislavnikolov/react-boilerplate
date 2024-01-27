@@ -7,22 +7,15 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: [
-            'zod',
-            'react-dom',
-            '@radix-ui/colors',
-            '@radix-ui/react-toast',
-          ],
+          vendor: ['zod', 'react-dom', '@radix-ui/colors', '@radix-ui/react-toast'],
         },
       },
     },
   },
-  plugins: [
-    react(),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': '/src',
+      src: '/src',
       store: '/src/store',
       assets: '/src/assets',
       router: '/src/router',

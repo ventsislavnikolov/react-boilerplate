@@ -1,12 +1,14 @@
+import React from 'react';
+import { cva } from 'class-variance-authority';
+
 import * as Toast from '@radix-ui/react-toast';
-import { styled } from 'react-cva';
 
 import closeIcon from 'assets/icons/closeIcon.svg';
 
-import ToastMessageViewport from './ToastMessageViewport';
-import ToastMessageDescription from './ToastMessageDescription';
+import ToastMessageViewport from 'components/ToastMessage/ToastMessageViewport';
+import ToastMessageDescription from 'components/ToastMessage/ToastMessageDescription';
 
-const Root = styled(Toast.Root)(
+const toast = cva(
   [
     'data-[state=closed]:animate-hide',
     'data-[swipe=end]:animate-swipeOut',
@@ -23,37 +25,37 @@ const Root = styled(Toast.Root)(
   {
     variants: {
       intent: {
-        primary: ['bg-primary'],
         error: ['bg-error'],
+        primary: ['bg-primary'],
         success: ['bg-success'],
       },
       size: {
-        normal: ['gap-x-[15px]', 'p-[15px]'],
+        small: ['gap-x-[15px]', 'p-[15px]'],
       },
     },
+    compoundVariants: [{ intent: 'primary', size: 'small', class: 'capitalize' }],
     defaultVariants: {
-      size: 'normal',
+      intent: 'primary',
+      size: 'small',
     },
   },
 );
 
-export interface RenderProps {
-  isOpen: boolean;
-  message: string;
-  severity: 'error' | 'primary' | 'success';
-  onOpenChange: () => void;
-}
-
-export default function Render({ isOpen, message, severity, onOpenChange }: RenderProps) {
+export default function Render({ isOpen, intent, viewPort, message, size, className, onOpenChange }: any) {
   return (
-    <>
-      <Root open={isOpen} duration={3000} intent={severity} onOpenChange={() => onOpenChange()}>
-        <ToastMessageDescription message={message} />
+    <Toast.Provider swipeDirection='right'>
+      <Toast.Root
+        open={isOpen}
+        duration={3000}
+        className={toast({ intent, size, className })}
+        onOpenChange={onOpenChange}
+      >
+        <ToastMessageDescription intent={intent} size={size} className={className} message={message} />
         <Toast.Close>
           <img src={closeIcon} alt='close icon' />
         </Toast.Close>
-      </Root>
-      <ToastMessageViewport />
-    </>
+      </Toast.Root>
+      <ToastMessageViewport intent={viewPort} size={size} className={className} />
+    </Toast.Provider>
   );
 }

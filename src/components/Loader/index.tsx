@@ -1,51 +1,66 @@
-import { styled } from 'react-cva';
+import { cva } from 'class-variance-authority';
 
-const Container = styled('div')(['h-screen', 'w-full'], {
+const container = cva('div', {
   variants: {
     intent: {
       primary: ['flex', 'flex-col', 'items-center', 'justify-center'],
     },
+    size: {
+      small: ['h-screen', 'w-full'],
+    },
   },
+  compoundVariants: [{ intent: 'primary', size: 'small', class: 'capitalize' }],
   defaultVariants: {
     intent: 'primary',
+    size: 'small',
   },
 });
 
-const Background = styled('div')(['absolute', 'rounded-full'], {
+const background = cva('div', {
   variants: {
     intent: {
-      primary: ['border-[2px]', 'border-solid', 'border-gray-200'],
+      primary: ['absolute', 'rounded-full', 'border-[2px]', 'border-solid', 'border-gray-200'],
     },
     size: {
-      xs: ['h-[30px]', 'w-[30px]'],
+      small: ['h-[30px]', 'w-[30px]'],
     },
   },
+  compoundVariants: [{ intent: 'primary', size: 'small', class: 'capitalize' }],
   defaultVariants: {
     intent: 'primary',
-    size: 'xs',
+    size: 'small',
   },
 });
 
-const Spinner = styled('div')(['absolute', 'animate-spin', 'rounded-full'], {
+const spinner = cva('div', {
   variants: {
     intent: {
-      primary: ['border-[2px]', 'border-solid', 'border-primary', 'border-t-transparent'],
+      primary: [
+        'absolute',
+        'animate-spin',
+        'rounded-full',
+        'border-[2px]',
+        'border-solid',
+        'border-primary',
+        'border-t-transparent',
+      ],
     },
     size: {
-      xs: ['h-[30px]', 'w-[30px]'],
+      small: ['h-[30px]', 'w-[30px]'],
     },
   },
+  compoundVariants: [{ intent: 'primary', size: 'small', class: 'capitalize' }],
   defaultVariants: {
     intent: 'primary',
-    size: 'xs',
+    size: 'small',
   },
 });
 
-export default function Render() {
+export default function Render({ intent, size, className }: any) {
   return (
-    <Container data-testid='loader'>
-      <Background />
-      <Spinner />
-    </Container>
+    <div className={container({ intent, size, className })} data-testid='loader'>
+      <div className={background({ intent, size, className })} />
+      <div className={spinner({ intent, size, className })} />
+    </div>
   );
 }

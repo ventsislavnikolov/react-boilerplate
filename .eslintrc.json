@@ -1,78 +1,97 @@
 {
-	"root": true,
-	"env": {
-		"es6": true,
-		"es2021": true,
-		"browser": true,
-		"jest/globals": true
-	},
-	"plugins": ["compat", "lodash", "unicorn", "unused-imports", "react"],
-	"extends": [
-		"plugin:compat/recommended",
-		"plugin:lodash/recommended",
-		"plugin:unicorn/recommended",
-		"plugin:tailwindcss/recommended",
-		"eslint:recommended",
-		"plugin:react/recommended",
-		"airbnb",
-		"airbnb/hooks"
-	],
-	"parser": "@babel/eslint-parser",
-	"parserOptions": {
-		"ecmaVersion": "latest",
-		"sourceType": "module",
-		"requireConfigFile": false,
-		"allowImportExportEverywhere": false,
-		"ecmaFeatures": {
-			"globalReturn": false
-		},
-		"babelOptions": {
-			"babelrc": false,
-			"configFile": false,
-			"presets": ["@babel/preset-react"]
-		}
-	},
-	"rules": {
-		"compat/compat": "error",
-		"react-hooks/exhaustive-deps": "error",
-		"jsx-quotes": ["error", "prefer-single"],
-		"max-len": ["error", { "code": 140, "ignoreComments": true, "ignoreStrings": true }]
-	},
-	"overrides": [
-		{
-			"files": ["tests/**"],
-			"plugins": ["vitest", "jest", "jest-dom", "testing-library"],
-			"extends": [
-				"plugin:jest/recommended",
-				"plugin:jest-dom/recommended",
-				"plugin:testing-library/react",
-				"plugin:vitest/recommended"
-			],
-			"rules": {
-				"jest/expect-expect": "off",
-				"vitest/expect-expect": "off"
-			}
-		}
-	],
-	"settings": {
-		"polyfills": ["fetch"],
-		"jest": {
-			"version": 29
-		},
-		"import/resolver": {
-			"alias": {
-				"map": [
-					["store", "./src/store"],
-					["hooks", "./src/hooks"],
-					["router", "./src/router"],
-					["routes", "./src/routes"],
-					["assets", "./src/assets"],
-					["helpers", "./src/helpers"],
-					["components", "./src/components"],
-					["translations", "./src/translations"]
-				],
-				"extensions": [".js", ".jsx", ".json"]
-			}
-		}
-	}
+  "root": true,
+  "env": {
+    "es6": true,
+    "es2021": true,
+    "browser": true,
+    "jest/globals": true
+  },
+  "plugins": ["compat", "lodash", "unicorn", "unused-imports", "@typescript-eslint", "react"],
+  "extends": [
+    "plugin:compat/recommended",
+    "plugin:lodash/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:tailwindcss/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "compat/compat": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "jsx-quotes": ["error", "prefer-single"],
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "max-len": ["error", { "code": 140, "ignoreComments": true, "ignoreStrings": true }],
+    "no-undef": "off",
+    "import/default": "off",
+    "lodash/prefer-noop": "off",
+    "operator-linebreak": "off",
+    "object-curly-newline": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/prefer-spread": "off",
+    "implicit-arrow-linebreak": "off",
+    "react/react-in-jsx-scope": "off",
+    "unicorn/no-zero-fractions": "off",
+    "unicorn/prefer-export-from": "off",
+    "react/jsx-props-no-spreading": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/prefer-query-selector": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }]
+  },
+  "overrides": [
+    {
+      "files": ["tests/**"],
+      "plugins": ["vitest", "jest", "jest-dom", "testing-library"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react",
+        "plugin:vitest/recommended"
+      ],
+      "rules": {
+        "jest/expect-expect": "off",
+        "vitest/expect-expect": "off"
+      }
+    }
+  ],
+  "settings": {
+    "polyfills": ["fetch"],
+    "jest": {
+      "version": 29
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["store", "./src/store"],
+          ["router", "./src/router"],
+          ["assets", "./src/assets"],
+          ["stories", "./src/stories"],
+          ["components", "./src/components"]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+      }
+    }
+  }
 }

@@ -1,29 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import * as Sentry from "@sentry/react";
-import { env } from "@/env";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import * as Sentry from '@sentry/react';
 
-// import redux store
-import Provider from "store/provider";
+import Provider from 'store/provider';
 
-// import i18n
-import "translations";
+import App from './App';
+import { env } from './env';
 
-// import app
-import App from "./App";
+import 'translations';
+import './index.css';
 
-// import styles
-import "./index.css";
-
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   Sentry.init({
     dsn: env.VITE_SENTRY_DSN,
     integrations: [
       new Sentry.BrowserTracing({
-        tracePropagationTargets: [
-          "localhost",
-          /^https:\/\/yourserver\.io\/api/,
-        ],
+        tracePropagationTargets: ['localhost', /^https:\/\/yourserver\.io\/api/],
       }),
       new Sentry.Replay(),
     ],
@@ -33,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider>
       <App />

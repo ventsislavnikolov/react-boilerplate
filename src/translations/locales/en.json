@@ -1,11 +1,11 @@
 {
-    "home": {
-        "german": "Deutsch",
-        "english": "English",
-        "threwError": "Threw error",
-        "hello-boilerplate": "Hello Boilerplate!"
-    },
-    "errors": {
-        "defaultError": "Something went wrong."
-    }
+  "home": {
+    "german": "Deutsch",
+    "english": "English",
+    "threwError": "Threw error",
+    "hello-boilerplate": "Hello Boilerplate!"
+  },
+  "errors": {
+    "defaultError": "Something went wrong."
+  }
 }
