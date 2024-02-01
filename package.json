@@ -78,7 +78,7 @@
     "@storybook/jest": "0.2.3",
     "@storybook/react": "7.6.11",
     "@storybook/react-docgen-typescript-plugin": "1.0.1",
-    "@storybook/react-vite": "7.6.11",
+    "@storybook/react-vite": "7.6.12",
     "@storybook/test": "7.6.11",
     "@storybook/test-runner": "0.16.0",
     "@storybook/testing-library": "0.2.2",
