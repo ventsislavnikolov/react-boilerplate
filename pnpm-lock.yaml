@@ -89,8 +89,8 @@ devDependencies:
     specifier: 12.1.0
     version: 12.1.0(semantic-release@23.0.2)
   '@storybook/addon-a11y':
-    specifier: 7.6.16
-    version: 7.6.16
+    specifier: 7.6.17
+    version: 7.6.17
   '@storybook/addon-coverage':
     specifier: 1.0.0
     version: 1.0.0
@@ -3984,10 +3984,10 @@ packages:
       '@sinonjs/commons': 3.0.1
     dev: true
 
-  /@storybook/addon-a11y@7.6.16:
-    resolution: {integrity: sha512-ebxgx6uSWm5gCK8R6T/VHScXy+XR5d7vltkn2wen08rzJhuA4nzMYpz9KwTsV+cu9vvrKfMKn4mpTP3kqnBI5Q==}
+  /@storybook/addon-a11y@7.6.17:
+    resolution: {integrity: sha512-UYHJAKQpJMCu4X4O/325UqozYrkhPn2VyQdwPgC+uiOKZvrtni4uRbpOspeyjC0wXH1tDbY8WZvxwvwQryYkpA==}
     dependencies:
-      '@storybook/addon-highlight': 7.6.16
+      '@storybook/addon-highlight': 7.6.17
       axe-core: 4.8.4
     dev: true
 
@@ -4134,6 +4134,12 @@ packages:
 
   /@storybook/addon-highlight@7.6.16:
     resolution: {integrity: sha512-DJtUBiButx6cz55eaRe5JFVBORVtp3Htr9PnxWVGEy4Ki5aoYCYWxMcPOuXVFvtWgBmh6d3HO0pEd888qPr60g==}
+    dependencies:
+      '@storybook/global': 5.0.0
+    dev: true
+
+  /@storybook/addon-highlight@7.6.17:
+    resolution: {integrity: sha512-R1yBPUUqGn+60aJakn8q+5Zt34E/gU3n3VmgPdryP0LJUdZ5q1/RZShoVDV+yYQ40htMH6oaCv3OyyPzFAGJ6A==}
     dependencies:
       '@storybook/global': 5.0.0
     dev: true
@@ -5476,12 +5482,6 @@ packages:
 
   /@types/node@18.19.17:
     resolution: {integrity: sha512-SzyGKgwPzuWp2SHhlpXKzCX0pIOfcI4V2eF37nNBJOhwlegQ83omtVQ1XxZpDE06V/d6AQvfQdPfnw0tRC//Ng==}
-    dependencies:
-      undici-types: 5.26.5
-    dev: true
-
-  /@types/node@20.11.16:
-    resolution: {integrity: sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -10838,7 +10838,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.11.16
+      '@types/node': 20.11.19
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
