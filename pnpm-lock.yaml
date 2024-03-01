@@ -92,8 +92,8 @@ devDependencies:
     specifier: 7.6.16
     version: 7.6.16
   '@storybook/addon-coverage':
-    specifier: 1.0.0
-    version: 1.0.0
+    specifier: 1.0.1
+    version: 1.0.1
   '@storybook/addon-designs':
     specifier: 7.0.9
     version: 7.0.9(@storybook/addon-docs@7.6.16)(@storybook/addons@7.6.16)(@storybook/components@7.6.16)(@storybook/manager-api@7.6.16)(@storybook/preview-api@7.6.16)(@storybook/theming@7.6.16)(react-dom@18.2.0)(react@18.2.0)
@@ -4025,8 +4025,8 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-coverage@1.0.0:
-    resolution: {integrity: sha512-7RMllRtDwyWH2fOeCS7ZG8o5eDTd44C0ZwA+m7dJDrnOXled75RddBPMYF+BsJjeAAWOkWxsII05EKCgS7QG2A==}
+  /@storybook/addon-coverage@1.0.1:
+    resolution: {integrity: sha512-jGDYPBbh3+LXMDw0Nmw+fUEDH3kuHvHSOjE1fqi4ac00CnwHnyD5PD6RFSpVxR4Fw/tCDPmKEubbOzQCSZGyJg==}
     dependencies:
       '@istanbuljs/load-nyc-config': 1.1.0
       '@jsdevtools/coverage-istanbul-loader': 3.0.5
@@ -5476,12 +5476,6 @@ packages:
 
   /@types/node@18.19.17:
     resolution: {integrity: sha512-SzyGKgwPzuWp2SHhlpXKzCX0pIOfcI4V2eF37nNBJOhwlegQ83omtVQ1XxZpDE06V/d6AQvfQdPfnw0tRC//Ng==}
-    dependencies:
-      undici-types: 5.26.5
-    dev: true
-
-  /@types/node@20.11.16:
-    resolution: {integrity: sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -10838,7 +10832,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.11.16
+      '@types/node': 20.11.19
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
