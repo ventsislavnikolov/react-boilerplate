@@ -43,6 +43,7 @@
     "import/default": "off",
     "lodash/prefer-noop": "off",
     "operator-linebreak": "off",
+    "import/no-unresolved": "off",
     "object-curly-newline": "off",
     "unicorn/filename-case": "off",
     "unicorn/prefer-spread": "off",
