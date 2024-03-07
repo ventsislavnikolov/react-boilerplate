@@ -26,3 +26,7 @@ graph.svg
 tsconfig.tsbuildinfo
 .env
 .sentryclirc
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

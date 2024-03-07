@@ -29,6 +29,8 @@
     "storybook": "storybook dev -p 6006",
     "test-storybook": "npx test-storybook",
     "test:coverage": "vitest run --coverage",
+    "env:pull": "npx dotenv-vault@latest pull",
+    "env:push": "npx dotenv-vault@latest push",
     "commitlint": "npx --no -- commitlint --edit",
     "analyze": "npx vite-bundle-visualizer -o stats.html",
     "prettier": "prettier --check ./src/**/*.{ts,tsx,json,css}",
